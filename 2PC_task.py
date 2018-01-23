@@ -5,9 +5,9 @@ conn1 = psycopg2.connect(dbname="Fly Booking", user="postgres", host="localhost"
 conn2 = psycopg2.connect(dbname="Hotel Booking", user="postgres", host="localhost")
 conn3 = psycopg2.connect(dbname="Account", user="postgres", host="localhost")
 
-conn1.tpc_begin(conn1.xid(42, 'flyhotel', 'conn1'))
-conn2.tpc_begin(conn2.xid(42, 'flyhotel', 'conn2'))
-conn3.tpc_begin(conn2.xid(42, 'flyhotel', 'conn3'))
+conn1.tpc_begin(conn1.xid(42, 'flighthotel', 'conn1'))
+conn2.tpc_begin(conn2.xid(42, 'flighthotel', 'conn2'))
+conn3.tpc_begin(conn2.xid(42, 'flighthotel', 'conn3'))
 
 cur1 = conn1.cursor()
 cur2 = conn2.cursor()
